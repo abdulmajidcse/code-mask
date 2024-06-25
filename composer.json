@@ -1,0 +1,27 @@
+{
+  "name": "abdulmajidcse/code-mask",
+  "description": "This is a simple PHP library that help you to manipulate your data.",
+  "type": "library",
+  "keywords": [
+    "PHP",
+    "Code Mask"
+  ],
+  "license": "MIT",
+  "require": {
+    "php": "^8.2.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Abdulmajidcse\\CodeMask\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Md. Abdul Majid",
+      "email": "abdulmajidcse@gmail.com"
+    }
+  ]
+}
