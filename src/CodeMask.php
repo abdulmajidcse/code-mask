@@ -5,27 +5,28 @@ namespace Abdulmajidcse\CodeMask;
 class CodeMask
 {
     /**
-     * Generate hidden phone number
+     * Generate hidden string
      * 
-     * @param string $phoneNumber
-     * @param int $visibleStartDigits
-     * @param int $visibleEndDigits
+     * @param string $string
+     * @param int $visibleInStart
+     * @param int $visibleInEnd
+     * @param string $hiddenString
      * 
      * @return string
      */
-    public function hidePhoneNumber(string $phoneNumber, int $visibleStartDigits = 1, int $visibleEndDigits = 1): string
+    public function hiddenString(string $string, int $visibleInStart = 1, int $visibleInEnd = 1, string $hiddenString = '*'): string
     {
-        $length = strlen($phoneNumber);
+        $length = strlen($string);
 
-        if ($length <= $visibleStartDigits + $visibleEndDigits) {
+        if ($length <= $visibleInStart + $visibleInEnd) {
             // do not need to hide phone number
-            return $phoneNumber;
+            return $string;
         }
 
-        $firstDigits = substr($phoneNumber, 0, $visibleStartDigits);
-        $lastDigits = substr($phoneNumber, -$visibleEndDigits);
-        $middlePortion = str_repeat('*', $length - $visibleStartDigits - $visibleEndDigits);
+        $firstString = substr($string, 0, $visibleInStart);
+        $lastString = substr($string, -$visibleInEnd);
+        $middlePortion = str_repeat($hiddenString, $length - $visibleInStart - $visibleInEnd);
 
-        return $firstDigits . $middlePortion . $lastDigits;
+        return $firstString . $middlePortion . $lastString;
     }
 }
