@@ -6,8 +6,6 @@ This is a simple PHP library that help you to manipulate your data.
 composer require abdulmajidcse/code-mask
 ```
 
-<br/>
-
 # Usage
 
 ## Hide Your String
