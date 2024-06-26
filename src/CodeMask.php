@@ -29,4 +29,19 @@ class CodeMask
 
         return $firstString . $middlePortion . $lastString;
     }
+
+    /**
+     * Generate formatted serial
+     * 
+     * @param string $string
+     * @param int $length
+     * @param string $padString
+     * @param string $prefix
+     * 
+     * @return string
+     */
+    public function generateSerial(string $string, int $length = 10, string $padString = '0', string $prefix = ''): string
+    {
+        return $prefix . str_pad($string, $length, $padString, STR_PAD_LEFT);
+    }
 }
