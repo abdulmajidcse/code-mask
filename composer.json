@@ -23,5 +23,7 @@
       "name": "Md Abdul Majid",
       "email": "abdulmajidcse@gmail.com"
     }
-  ]
+  ],
+  "minimum-stability": "stable",
+  "prefer-stable": true
 }
