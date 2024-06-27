@@ -18,16 +18,12 @@ class CodeMask
     {
         $length = strlen($string);
 
-        if ($length <= $visibleInStart + $visibleInEnd) {
-            // do not need to hide phone number
-            return $string;
-        }
+        $padLength = $length - $visibleInEnd;
 
         $firstString = substr($string, 0, $visibleInStart);
         $lastString = substr($string, -$visibleInEnd);
-        $middlePortion = str_repeat($hiddenString, $length - $visibleInStart - $visibleInEnd);
-
-        return $firstString . $middlePortion . $lastString;
+        
+        return str_pad($firstString, $padLength, $hiddenString, STR_PAD_RIGHT) . $lastString;
     }
 
     /**
