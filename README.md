@@ -10,7 +10,7 @@ composer require abdulmajidcse/code-mask
 You'll see code example so that you can guess where you have to use it.
 
 ## Hide Your String
-Sometimes, you need to show phone, email or any other text via hidden mask like 12****90. For this type of tasks, you can follow below code sample.
+Sometimes, you need to hide phone, email or any other text with your special letter like 12****90. For this type of tasks, you can follow below code sample.
 
 ```
 <?php
@@ -19,15 +19,15 @@ use Abdulmajidcse\CodeMask\CodeMask;
 
 $codeMask = new CodeMask();
 $phoneNumber = "1234567890";
-$hiddenPhoneNumber = $codeMask->hiddenString($phoneNumber, 2, 2);
+$hidePhoneNumber = $this->codeMask->hideString($phoneNumber, 2, 2);
 
-echo $hiddenPhoneNumber; // output: 12******90
+echo $hidePhoneNumber; // output: 12******90
 
 ?>
 ```
 
 ## Generate Serial
-Suppose, you have to generate a serial or any other string based ID with a special format. To do this, you can follow below code sample.
+Suppose, you have to generate an ID or any other string based ID with a special format. To do this, you can follow below code sample.
 
 ```
 <?php
@@ -35,9 +35,9 @@ Suppose, you have to generate a serial or any other string based ID with a speci
 use Abdulmajidcse\CodeMask\CodeMask;
 
 $codeMask = new CodeMask();
-$serial = $codeMask->generateSerial(123, 10, 0, '2701');
+$id = $codeMask->generateId(123, 10, 0, '2701');
 
-echo $serial; // output: 27010000000123
+echo $id; // output: 27010000000123
 
 ?>
 ```

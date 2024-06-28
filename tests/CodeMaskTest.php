@@ -12,16 +12,16 @@ class CodeMaskTest extends TestCase
         $this->codeMask = new CodeMask();
     }
 
-    public function testHiddenString()
+    public function testHideString()
     {
         $phoneNumber = "1234567890";
-        $hiddenPhoneNumber = $this->codeMask->hiddenString($phoneNumber, 2, 2);
-        $this->assertEquals('12******90', $hiddenPhoneNumber);
+        $hidePhoneNumber = $this->codeMask->hideString($phoneNumber, 2, 2);
+        $this->assertEquals('12******90', $hidePhoneNumber);
     }
 
-    public function testGenerateSerial()
+    public function testGenerateId()
     {
-        $serial = $this->codeMask->generateSerial(123, 10, 0, '2701');
-        $this->assertEquals('27010000000123', $serial);
+        $id = $this->codeMask->generateId(123, 10, 0, '2701');
+        $this->assertSame('27010000000123', $id);
     }
 }
