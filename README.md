@@ -9,7 +9,7 @@ composer require abdulmajidcse/code-mask
 # Usage
 You'll see code example so that you can guess where you have to use it.
 
-## Hide Your String
+## Hide String
 Sometimes, you need to hide phone, email or any other text with your special letter like 12****90. For this type of tasks, you can follow below code sample.
 
 ```
@@ -26,7 +26,7 @@ echo $hidePhoneNumber; // output: 12******90
 ?>
 ```
 
-## Generate Serial
+## Generate ID
 Suppose, you have to generate an ID or any other string based ID with a special format. To do this, you can follow below code sample.
 
 ```
