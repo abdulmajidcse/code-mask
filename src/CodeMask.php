@@ -22,7 +22,7 @@ class CodeMask
 
         $firstString = substr($string, 0, $visibleInStart);
         $lastString = substr($string, -$visibleInEnd);
-        
+
         return str_pad($firstString, $padLength, $maskString, STR_PAD_RIGHT) . $lastString;
     }
 
@@ -39,5 +39,20 @@ class CodeMask
     public function generateId(string $string, int $length = 10, string $padString = '0', string $prefix = ''): string
     {
         return $prefix . str_pad($string, $length, $padString, STR_PAD_LEFT);
+    }
+
+    /**
+     * Money Format
+     * 
+     * @param float $number
+     * @param string $prefix = ''
+     * @param string $postfix = ''
+     * 
+     * @return string
+     */
+    public function moneyFormat(float $number, string $prefix = '', string $postfix = ''): string
+    {
+        $money = preg_replace("/(\d+?)(?=(\d\d)+(\d)(?!\d))(\.\d+)?/i", "$1,", round($number, 2));
+        return trim("$prefix $money $postfix");
     }
 }

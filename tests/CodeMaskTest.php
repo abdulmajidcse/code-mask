@@ -24,4 +24,16 @@ class CodeMaskTest extends TestCase
         $id = $this->codeMask->generateId(123, 10, 0, '2701');
         $this->assertSame('27010000000123', $id);
     }
+
+    public function testMoneyFormatWithLeftCurrency()
+    {
+        $money = $this->codeMask->moneyFormat(100000000.556, 'TK');
+        $this->assertSame('TK 10,00,00,000.56', $money);
+    }
+
+    public function testMoneyFormatWithRightCurrency()
+    {
+        $money = $this->codeMask->moneyFormat(100000000.556, '', 'BDT');
+        $this->assertSame('10,00,00,000.56 BDT', $money);
+    }
 }
